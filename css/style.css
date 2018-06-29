@@ -1,0 +1,16 @@
+body {
+    background-color: bisque;
+    font-family: Arial, Helvetica, sans-serif !important;
+    margin: 20px 40px 0 40px !important;
+}
+
+.jumbotron {
+    text-align: center !important;
+    background-color: bisque !important;
+    color: white !important;
+}
+
+.title {
+    background-color: lightcyan;
+    font-size: 20px;
+}

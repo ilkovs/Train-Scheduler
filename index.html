@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Train Scheduler</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+    crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="jumbotron">
+        <h1>Anytime is Train Time</h1>
+        <p>Choo Choo. Chee Chee.</p>
+    </div>
+    <table class="table">
+        <thead>
+            <p class="title">
+                <b>Current Train Schedule</b>
+            </p>
+            
+            <tr>
+                <!-- <th scope="col">#</th> -->
+                <th scope="col">Train Name</th>
+                <th scope="col">Destination</th>
+                <th scope="col">Frequency (min)</th>
+                <th scope="col">Next Arrival</th>
+                <th scope="col">Minutes Away</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">Orient Express</th>
+                <td>Trenton</td>
+                <td>30</td>
+                <td>06:35</td>
+                <td>15</td>
+            </tr>
+            <tr>
+                <th scope="row">Oregon Trail</th>
+                <td>Salem</td>
+                <td>60</td>
+                <td>07:25</td>
+                <td>10</td>
+            </tr>
+            <tr>
+                <th scope="row">Boston Midnight</th>
+                <td>Boston</td>
+                <td>45</td>
+                <td>09:55</td>
+                <td>45</td>
+            </tr>
+            <tr>
+                <th scope="row">California Caravan</th>
+                <td>San Francisco</td>
+                <td>35</td>
+                <td>09:25</td>
+                <td>25</td>
+            </tr>
+        </tbody>
+    </table>
+    <thead>
+            <p class="title">
+                <b>Add Train</b>
+            </p>
+            </thead>
+    <div class="form-group row">
+        <label for="colFormLabel" class="col-sm-2 col-form-label">Train Name</label>
+        <div class="col-sm-10">
+            <input type="email" class="form-control" id="Name">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="colFormLabel" class="col-sm-2 col-form-label">Destination</label>
+        <div class="col-sm-10">
+            <input type="email" class="form-control" id="Role">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="colFormLabel" class="col-sm-2 col-form-label">First Train Time (HH:mm - military time)</label>
+        <div class="col-sm-10">
+            <input type="email" class="form-control" id="Start Date">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="colFormLabel" class="col-sm-2 col-form-label">Frequency (min)</label>
+        <div class="col-sm-10">
+            <input type="email" class="form-control" id="Monthly Rate">
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-sm-10">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="javascript/app.js"></script>
+
+</html>
