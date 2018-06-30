@@ -1,28 +1,35 @@
 <!DOCTYPE html>
 <html lang="en-us">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Train Scheduler</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-    crossorigin="anonymous">
-</head>
-
-<body>
-    <div class="jumbotron">
-        <h1>Anytime is Train Time</h1>
-        <p>Choo Choo. Chee Chee.</p>
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Train Scheduler</title>
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+        <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+        <script src='https://cdn.rawgit.com/admsev/jquery-play-sound/master/jquery.playSound.js'></script>
+        <script src="javascript/app.js"></script>
+    </head>
+    
+    <body>
+        <div class="jumbotron">
+                <h3>Current Time: <span id="timer"></span></h3>            
+                <h1><i>Joy Station</i></h1>
+            <marquee behavior="scroll" direction="left">
+                <img src="images/train 3.gif" width="400" height="100" alt="smile">
+        </marquee>
     </div>
-    <table class="table">
+    <table class="table" id="trainTable">
+        <p class="title">
+            <b>Current Train Schedule</b>
+        </p>
+        
         <thead>
-            <p class="title">
-                <b>Current Train Schedule</b>
-            </p>
-            
             <tr>
-                <!-- <th scope="col">#</th> -->
                 <th scope="col">Train Name</th>
                 <th scope="col">Destination</th>
                 <th scope="col">Frequency (min)</th>
@@ -62,41 +69,42 @@
         </tbody>
     </table>
     <thead>
-            <p class="title">
-                <b>Add Train</b>
-            </p>
-            </thead>
+        <p class="title">
+            <b>Add Train</b>
+        </p>
+    </thead>
     <div class="form-group row">
         <label for="colFormLabel" class="col-sm-2 col-form-label">Train Name</label>
         <div class="col-sm-10">
-            <input type="email" class="form-control" id="Name">
+            <input type="email" class="form-control" id="trainName">
         </div>
     </div>
     <div class="form-group row">
         <label for="colFormLabel" class="col-sm-2 col-form-label">Destination</label>
         <div class="col-sm-10">
-            <input type="email" class="form-control" id="Role">
+            <input type="email" class="form-control" id="destination">
         </div>
     </div>
     <div class="form-group row">
         <label for="colFormLabel" class="col-sm-2 col-form-label">First Train Time (HH:mm - military time)</label>
         <div class="col-sm-10">
-            <input type="email" class="form-control" id="Start Date">
+            <input type="email" class="form-control" id="trainTime">
         </div>
     </div>
     <div class="form-group row">
         <label for="colFormLabel" class="col-sm-2 col-form-label">Frequency (min)</label>
         <div class="col-sm-10">
-            <input type="email" class="form-control" id="Monthly Rate">
+            <input type="email" class="form-control" id="frequency">
         </div>
     </div>
     <div class="form-group row">
         <div class="col-sm-10">
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary" id="add-train-btn">Submit</button>
         </div>
     </div>
+    <audio autoplay="autoplay" style="display:none;">
+        <embed src="images/train-depart-with-whistle-01.mp3" hidden="true" autostart="true" loop="false" class="mySound" />
+    </audio>
 </body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="javascript/app.js"></script>
 
 </html>
