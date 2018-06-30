@@ -4,12 +4,12 @@ $(document).ready(function () {
 
     // Initialize Firebase
     var config = {
-        apiKey: "AIzaSyBvx7_I51LqOez7yJWIXAsBg62WixJPZjk",
-        authDomain: "train-scheduler-assignme-87f23.firebaseapp.com",
-        databaseURL: "https://train-scheduler-assignme-87f23.firebaseio.com",
-        projectId: "train-scheduler-assignme-87f23",
-        storageBucket: "train-scheduler-assignme-87f23.appspot.com",
-        messagingSenderId: "73453887064"
+        apiKey: "AIzaSyD8lsZf9MxHGFUN1HW_jaLgyTcGFF3aGHU",
+        authDomain: "projectone-68cbb.firebaseapp.com",
+        databaseURL: "https://projectone-68cbb.firebaseio.com",
+        projectId: "projectone-68cbb",
+        storageBucket: "projectone-68cbb.appspot.com",
+        messagingSenderId: "1003485439024"
     };
 
     firebase.initializeApp(config);
@@ -56,24 +56,25 @@ $(document).ready(function () {
         $("#trainTime-input").val("");
         $("#frequency-input").val("");
 
-        database.ref().on("child_added", function (childSnapshot, prevChildKey) {
-
-            console.log(childSnapshot.val());
-
-            // Store everything into a variable.
-            var trainName = childSnapshot.val().name;
-            var destination = childSnapshot.val().destination;
-            var trainTime = childSnapshot.val().trainTime;
-            var frequency = childSnapshot.val().frequency;
-
-            // Employee Info
-            console.log(trainName);
-            console.log(destination);
-            console.log(trainTime);
-            console.log(frequency);
-
-        })
+        
     })
+
+    database.ref().on("child_added", function (childSnapshot, prevChildKey) {
+
+        console.log(childSnapshot.val());
+
+        // Store everything into a variable.
+        var trainName = childSnapshot.val().name;
+        var destination = childSnapshot.val().destination;
+        var trainTime = childSnapshot.val().trainTime;
+        var frequency = childSnapshot.val().frequency;
+
+        // Employee Info
+        console.log("Name: " + trainName);
+        console.log("Destination: " + destination);
+        console.log(trainTime);
+        console.log(frequency);
+
         // train Time pushed back 1 year
         var trainTimeConverted = moment(trainTime, "hh:mm").subtract(1, "years");
         console.log(trainTimeConverted);
@@ -98,9 +99,13 @@ $(document).ready(function () {
         // determine next train arrival
         var nextArrival = moment().add(minutesAway, "minutes").format("hh:mm a");
         console.log("ARRIVAL TIME: " + moment(nextArrival).format("hh:mm a"));
-        
-        
-        $("#trainTable > tbody").append("</td><td>" + trainName + "</td><td>" + destination + "</td><td>" +
+    
+    
+        $("#trainTable > tbody").append("<tr><td>" + trainName + "</td><td>" + destination + "</td><td>" +
         frequency + "</td><td>" + nextArrival + "</td><td>" + minutesAway + "</td></tr>");
+
+    })
+
+    
         
 })
