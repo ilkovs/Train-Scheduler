@@ -23,3 +23,9 @@ iframe {
 h3 {
     color: darkblue !important;
 }
+
+button {
+    border-radius: 10px;
+    padding: 15px 25px;
+}
+
